@@ -339,7 +339,7 @@
       const typ=document.createElement('div');typ.className='message ai';typ.innerHTML=`<div class="bubble"><div class="typing"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div></div>`;els.msg.appendChild(typ);scroll();
       gen=true;
       try{
-        let sysMsg={role:'system',content:'你现在是卜凡 AI，是一个聪明、有趣、乐于助人的 AI 助手。你必须用"卜凡 AI"来自称，不要提 Qwen、通义千问等其他名字。'};
+        let sysMsg={role:'system',content:'你现在是钰崧，是一个聪明、有趣、乐于助人的 AI 助手。你必须用"钰崧"来自称，不要提 Qwen、通义千问等其他名字。'};
         let apiMsgs=c.msgs.map(m=>({role:m.role,content:m.content}));
         const res=await fetch(CFG.API_URL,{method:'POST',headers:{'Authorization':`Bearer ${CFG.API_KEY}`,'Content-Type':'application/json'},body:JSON.stringify({model:CFG.MODEL,messages:[sysMsg,...apiMsgs],temperature:.7,max_tokens:2048,stream:true})});
         if(!res.ok)throw new Error('API 请求失败');
